@@ -1,14 +1,19 @@
 import requests
 import time
 import sys
+import os
+from dotenv import load_dotenv
+
+# Carrega as variáveis de ambiente do arquivo .env
+load_dotenv()
 
 print("Argumentos recebidos:")
 print(sys.argv)
 
 # =========================
-# SUA API KEY
+# SUA API KEY (Puxando do .env com segurança)
 # =========================
-API_KEY = "SUA API KEY"
+API_KEY = os.getenv("VT_API_KEY")
 
 headers = {
     "x-apikey": API_KEY
